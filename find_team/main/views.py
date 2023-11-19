@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 
 
@@ -11,6 +10,6 @@ def index(request):
 
 def about(request):
     data = {
-        'title': 'Про нас',
+        'title': 'О проекте',
     }
     return render(request, 'main/about.html', data)

@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Поиск команд{% endblock %}
+
+{% block content %}
+<div class="page_team_list">
+    <h1>Найди себе команду!</h1>
+
+    {% if teams %}
+        {% for el in teams %}
+            <div class="alert alert-warning">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.intro }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Активных команд пока нет, а значит самое время создать её!</p>
+        <button class="team_button_create">
+            <a href="{% url 'create' %}"><i class="fa-solid fa-plus"></i> Создать команду</a>
+        </button>
+    {% endif %}
+</div>
+{% endblock %}

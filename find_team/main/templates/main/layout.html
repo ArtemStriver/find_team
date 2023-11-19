@@ -12,55 +12,56 @@
     <script src="https://kit.fontawesome.com/87cf8839c3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="page_header">
-        <nav class="navigation">
-<!--          TODO  на первое время сделаю стилизованый текст в качестве логотипа-->
-            <p class="logo">FindTeam</p>
+<header class="page_header">
+    <nav class="navigation">
+        <!--          TODO  на первое время сделаю стилизованый текст в качестве логотипа-->
+        <p class="logo">FindTeam</p>
 
-            <ul class="navigation_list">
-                <li>
-                    <a href="{% url 'home' %}" class="navigation_title"><i class="fa-solid fa-house"></i> Главная</a>
-                </li>
-                <li>
-                    <a href="{% url 'home' %}" class="navigation_title"><i class="fa-solid fa-magnifying-glass"></i> Найти команду</a>
-                </li>
-                <li>
-                    <a href="{% url 'home' %}" class="navigation_title"><i class="fa-solid fa-plus"></i> Создать команду</a>
-                </li>
-                <li>
-                    <a href="{% url 'about' %}" class="navigation_title"><i class="fa-solid fa-star"></i> О проекте</a>
-                </li>
-            </ul>
+        <ul class="navigation_list">
+            <li>
+                <a href="{% url 'home' %}" class="navigation_title"><i class="fa-solid fa-house"></i> Главная</a>
+            </li>
+            <li>
+                <a href="{% url 'team_list' %}" class="navigation_title"><i class="fa-solid fa-magnifying-glass"></i> Найти
+                    команду</a>
+            </li>
+            <li>
+                <a href="{% url 'create' %}" class="navigation_title"><i class="fa-solid fa-plus"></i> Создать команду</a>
+            </li>
+            <li>
+                <a href="{% url 'about' %}" class="navigation_title"><i class="fa-solid fa-star"></i> О проекте</a>
+            </li>
+        </ul>
 
-            <button type="button" class="navigation_button">
-                {% if user.is_authenticated %}
-                    <a href="{#}">Профиль</a>
+        <button type="button" class="navigation_button">
+            {% if user.is_authenticated %}
+            <a href="{#}">Профиль</a>
             {% else %}
-                    <a href="{#}">Вход</a>
-             {% endif %}
-            </button>
-<!--            TODO Надо будет отдельно проработать меню профиля-->
-<!--            <div class="navigation_button_profile">-->
-<!--            {% if user.is_authenticated %}-->
-<!--                <button type="button" class="navigation_button">-->
-<!--                    <a href="{#}">Профиль</a>-->
-<!--                </button>-->
-<!--            {% else %}-->
-<!--                <button type="button" class="navigation_button">-->
-<!--                    <a href="{#}">Вход</a>-->
-<!--                </button>-->
-<!--             {% endif %}-->
-<!--             </div>-->
-        </nav>
-    </header>
+            <a href="{#}">Вход</a>
+            {% endif %}
+        </button>
+        <!--            TODO Надо будет отдельно проработать меню профиля-->
+        <!--            <div class="navigation_button_profile">-->
+        <!--            {% if user.is_authenticated %}-->
+        <!--                <button type="button" class="navigation_button">-->
+        <!--                    <a href="{#}">Профиль</a>-->
+        <!--                </button>-->
+        <!--            {% else %}-->
+        <!--                <button type="button" class="navigation_button">-->
+        <!--                    <a href="{#}">Вход</a>-->
+        <!--                </button>-->
+        <!--             {% endif %}-->
+        <!--             </div>-->
+    </nav>
+</header>
 
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
 
-    <footer class="page_footer">
-        <p> Здесь будет подвал</p>
-    </footer>
+<footer class="page_footer">
+    <p> Здесь будет подвал</p>
+</footer>
 </body>
 </html>

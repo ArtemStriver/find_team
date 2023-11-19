@@ -1,6 +1,11 @@
+/* Цвет фона */
+body {
+    background: #aaa;
+}
+
 .navigation {
     display: flex;
-    flex-warp: warp;
+    flex-wrap: wrap;
     justify-content: center;
     min-height: 70px;
     background-color: #333;
@@ -22,7 +27,7 @@
 
 .navigation_list {
     display: flex;
-    flex-warp: warp;
+    flex-wrap: wrap;
     gap: 100px;
     margin: 0;
     padding: 0;
@@ -80,11 +85,6 @@
     color: red;
     position: absolute;
     bottom: 0;
-}
-
-/* Цвет фона */
-body {
-    background: #aaa;
 }
 
 .page_main {
@@ -153,7 +153,7 @@ body {
     background-color: #4CAF50;
 }
 
-main .features {
+.page_team_list {
     float: center;
     color: #000;
     margin-top: 50px;
@@ -163,20 +163,55 @@ main .features {
     margin-right: auto;
 }
 
-main .features h1 {font-size: 50px; }
-main .features p {max-width: 400px; margin: 20px auto}
+.page_team_list h1 {
+    font-size: 50px;
+    margin-bottom: 50px;
+ }
 
-.alert-warning {
+.page_team_list p {max-width: 400px; margin: 20px auto}
+
+.page_team_list .alert-warning {
     float: center;
     clear: both;
-    width: 400px;
+    width: 450px;
     margin: 20px auto;
     text-align: left;
 }
 
+.team_button_create {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    text-align: center;
+    width: 300px;
+    height: 80px;
+    background-color: #FF9C00;
+    border: none;
+    border-radius: 100px;
+}
+
+.team_button_create a {
+    text-align: center;
+    font-weight: 800;
+    color: #000;
+    font-size: 24px;
+    line-height: 38px;
+    text-decoration: none;
+}
+
+.team_button_create:hover {
+    color: #fff;
+    transition: transform .5s;
+    transform: scale(1.05);
+    background-color: #4CAF50;
+}
+
 form {
     margin: auto;
-    width: 500px;
+    width: 600px;
     margin-top: 50px;
     margin-bottom: 20px;
 }
