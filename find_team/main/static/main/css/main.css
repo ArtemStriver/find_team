@@ -1,0 +1,204 @@
+.navigation {
+    display: flex;
+    flex-warp: warp;
+    justify-content: center;
+    min-height: 70px;
+    background-color: #333;
+}
+/* TODO для лого и кнопки входа настроить абсолютную позицию на экране */
+.logo {
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-top: 2px;
+    margin-right: 110px;
+    font-weight: 800;
+    font-size: 43px;
+    line-heading: 45px;
+    font-family: Ubuntu, serif;
+    text-decoration: none;
+    color: white;
+}
+
+.navigation_list {
+    display: flex;
+    flex-warp: warp;
+    gap: 100px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation_title {
+    display: block;
+    margin-top: 10px;
+    min-width: 110px;
+    font-weight: 800;
+    font-family: Ubuntu, serif;
+    font-size: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+.navigation_title:hover {
+    color: #eb5959;
+    text-decoration: none;
+    transition: transform .5s;
+    transform: scale(1.03);
+    background-color: #ddd;
+}
+
+.navigation_button {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 130px;
+    width: 100px;
+    height: 50px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.navigation_button a {
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navigation_button:hover {
+    color: #fff;
+    transition: transform .5s;
+    transform: scale(1.05);
+    background-color: #4CAF50;
+}
+
+.page_footer {
+    color: red;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Цвет фона */
+body {
+    background: #aaa;
+}
+
+.page_main {
+    display: block;
+    color: #000;
+    margin-top: 200px;
+}
+
+.page_main h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: 800;
+    font-size: 65px;
+    line-height: 68px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.page_main p {
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 28px;
+    text-align: centre;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.main_button {
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.main_button_find, .main_button_create {
+    display: inline-block;
+    margin: 60px;
+    width: 400px;
+    height: 120px;
+    border: none;
+    border-radius: 10px;
+}
+
+.main_button_find {background-color: #E9003A}
+.main_button_create {background-color: #FF9C00}
+
+.main_button_find a, .main_button_create a {
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 38px;
+}
+
+.main_button_find:hover, .main_button_create:hover {
+    color: #fff;
+    transition: transform .5s;
+    transform: scale(1.05);
+    background-color: #4CAF50;
+}
+
+main .features {
+    float: center;
+    color: #000;
+    margin-top: 50px;
+    text-align: center;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main .features h1 {font-size: 50px; }
+main .features p {max-width: 400px; margin: 20px auto}
+
+.alert-warning {
+    float: center;
+    clear: both;
+    width: 400px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+form {
+    margin: auto;
+    width: 500px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin: auto;
+    width: 600px;
+    margin-top: 30px;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+  float: left;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}

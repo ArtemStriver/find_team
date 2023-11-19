@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="page_main">
+        <h1>Найди себе команду или создай её сам!</h1>
+        <p>Работа в команде делает каждого более открытым и терпимым, учит взаимодействовать с другими людьми,
+            налаживать связи и эффективно сотрудничать. В команде нужно подчиняться решению большинства,
+            и это воспитывает в человеке адекватное восприятие мира, учит логическому и критическому мышлению.</p>
+        <div class="main_button">
+            <button type="button" class="main_button_find">
+                <a href="{#}">Найти команду</a>
+            </button>
+            <button type="button" class="main_button_create">
+                <a href="{#}">Создать команду</a>
+            </button>
+        </div>
+    </div>
+{% endblock %}
