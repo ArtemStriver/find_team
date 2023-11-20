@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Удаление команды{% endblock %}
+
+{% block content %}
+<div class="page_team_list">
+    <h1>Удаление команды</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Вы точно уверены, что хотите это сделать!?</p>
+        <button type="submit" class="btn btn-danger">Удалить команду</button>
+    </form>
+</div>
+{% endblock %}

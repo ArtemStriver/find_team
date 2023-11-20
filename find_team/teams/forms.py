@@ -1,13 +1,20 @@
 import datetime
 
 from .models import Teams
-from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, DateInput
+from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, DateInput, DateTimeField
 
 
 class TeamsForm(ModelForm):
+    deadline = DateTimeField(required=False,
+                             widget=DateInput(attrs={'type': 'datetime-local',
+                                                     'class': 'form-control',
+                                                     'placeholder': "Крайний срок для сбора команды"}),
+                             initial=datetime.date.today(),
+                             localize=True)
+
     class Meta:
         model = Teams
-        fields = ['title', 'intro', 'text', 'deadline', 'tags']
+        fields = ['title', 'intro', 'text', 'tags']
 
         widgets = {
             'title': TextInput(attrs={
@@ -22,11 +29,6 @@ class TeamsForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': "Подробное описание команды"
             }),
-            'deadline': DateTimeInput(
-                attrs={
-                    'class': 'form-control',
-                    'placeholder': "Крайний срок для сбора команды"
-                }),
             'tags': TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': "Теги для быстрого поиска"

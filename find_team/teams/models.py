@@ -15,6 +15,10 @@ class Teams(models.Model):
     def __str__(self):
         return self.title
 
+
+    def get_absolute_url(self):
+        return f'/teams/{self.id}'
+
     class Meta:
         verbose_name = 'Команда'
         verbose_name_plural = 'Команды'
