@@ -4,7 +4,12 @@ from django.db import models
 
 class Teams(models.Model):
     # TODO сделать чтобы в качестве владельца был тот, кто создает команду.
-    owner = models.ForeignKey('auth.User', related_name='team_owner', on_delete=models.CASCADE, default='1')
+    owner = models.ForeignKey('auth.User',
+                              related_name='team_owner',
+                              on_delete=models.CASCADE,
+                              default='1',)
+                              # blank=True,
+                              # null=True)
     title = models.CharField('Название', max_length=42)
     intro = models.CharField('Вступление', max_length=250)
     text = models.TextField('Описание')
@@ -14,7 +19,6 @@ class Teams(models.Model):
 
     def __str__(self):
         return self.title
-
 
     def get_absolute_url(self):
         return f'/teams/{self.id}'
