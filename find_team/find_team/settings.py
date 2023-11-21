@@ -22,6 +22,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
+EMAIL_HOST_USER = 'artemstriver-project@yandex.ru'
+EMAIL_HOST_PASSWORD = 'djuyecyltwunrmik'
+DEFAULT_FROM_EMAIL = 'artemstriver-project@yandex.ru'
 
 # Application definition
 
@@ -120,6 +128,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = reverse_lazy('urls:profile')
+LOGIN_REDIRECT_URL = '/users/profile'
 
 # AUTH_USER_MODEL = 'users.Comrade'
