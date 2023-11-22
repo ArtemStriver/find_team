@@ -1,7 +1,7 @@
 import datetime
 
 from .models import Teams
-from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, DateInput, DateTimeField
+from django.forms import ModelForm, TextInput, Textarea, DateInput, DateTimeField
 
 
 class TeamsForm(ModelForm):
@@ -14,7 +14,7 @@ class TeamsForm(ModelForm):
 
     class Meta:
         model = Teams
-        fields = ['title', 'intro', 'text', 'tags']
+        fields = ['owner', 'title', 'intro', 'text', 'tags']
 
         widgets = {
             'title': TextInput(attrs={

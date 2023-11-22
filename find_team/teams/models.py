@@ -2,16 +2,15 @@ from datetime import datetime
 
 from django.contrib.auth.models import User
 from django.db import models
-User
+
 
 class Teams(models.Model):
     # TODO сделать чтобы в качестве владельца был тот, кто создает команду.
     owner = models.ForeignKey('auth.User',
                               related_name='team_owner',
                               on_delete=models.CASCADE,
-                              default='1',)
-                              # blank=True,
-                              # null=True)
+                              blank=True,
+                              null=True)
     title = models.CharField('Название', max_length=42)
     intro = models.CharField('Вступление', max_length=250)
     text = models.TextField('Описание')

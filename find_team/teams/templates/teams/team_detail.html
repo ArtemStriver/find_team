@@ -7,7 +7,11 @@
     <h1>{{ team_detail_view.title }}</h1>
     <p>{{ team_detail_view.deadline }}</p>
     <p>{{ team_detail_view.text }}</p>
-    <a href="{% url 'team_update' team_detail_view.id %}" class="btn btn-info">Редактировать команду</a>
-    <a href="{% url 'team_delete' team_detail_view.id %}" class="btn btn-danger">Удалить команду</a>
+    {% if team_detail_view.owner == user %}
+        <a href="{% url 'team_update' team_detail_view.id %}" class="btn btn-info">Редактировать команду</a>
+        <a href="{% url 'team_delete' team_detail_view.id %}" class="btn btn-danger">Удалить команду</a>
+    {% else %}
+<!--    # TODO добавить кнопку вступления в команду для не автора команды-->
+    {% endif %}
 </div>
 {% endblock %}
