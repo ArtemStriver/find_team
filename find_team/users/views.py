@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView
+from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordChangeDoneView, \
+    PasswordChangeView
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import FormView
@@ -28,3 +29,11 @@ class UsersPasswordResetView(PasswordResetView):
 
 class UsersPasswordResetDoneView(PasswordResetDoneView):
     template_name = 'users/password_reset_done.html'
+
+
+class UsersPasswordChangeView(PasswordChangeView):
+    template_name = 'users/password_change.html'
+
+
+class UsersPasswordChangeDoneView(PasswordChangeDoneView):
+    template_name = 'users/password_change_done.html'

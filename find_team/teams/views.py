@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .models import Teams
 from .forms import TeamsForm
@@ -28,6 +29,7 @@ class TeamDeleteView(DeleteView):
     template_name = 'teams/team_delete.html'
 
 
+@login_required
 def team_create(request):
     error = ''
     if request.method == "POST":

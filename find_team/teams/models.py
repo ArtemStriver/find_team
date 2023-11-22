@@ -1,6 +1,8 @@
 from datetime import datetime
-from django.db import models
 
+from django.contrib.auth.models import User
+from django.db import models
+User
 
 class Teams(models.Model):
     # TODO сделать чтобы в качестве владельца был тот, кто создает команду.
