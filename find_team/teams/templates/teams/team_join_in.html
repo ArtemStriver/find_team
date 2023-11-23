@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Заявка{% endblock %}
+
+{% block content %}
+<div class="page_team_list">
+    <form method="post">
+        {% csrf_token %}
+        <h1>Заявка в команду</h1>
+        <textarea class="form-control" name='text' placeholder="Напишите базовую информацию о себе, чтобы команде было понятно подходите ли вы ей."cols="40" rows="4"></textarea><br>
+        <button type="submit" class="btn btn-success">Отправить заявку</button><br>
+        {{ error }}
+    </form>
+</div>
+{% endblock %}

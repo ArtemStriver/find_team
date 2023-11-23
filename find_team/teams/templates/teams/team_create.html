@@ -7,7 +7,7 @@
     <h1>Создай свою команду!</h1>
     <form method="post">
         {% csrf_token %}
-        {{ user.id }}
+<!--        {{ user.id }}-->
         {{ form.title }}<br>
         {{ form.intro }}<br>
         {{ form.text }}<br>

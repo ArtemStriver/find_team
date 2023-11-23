@@ -5,7 +5,6 @@ from django.db import models
 
 
 class Teams(models.Model):
-    # TODO сделать чтобы в качестве владельца был тот, кто создает команду.
     owner = models.ForeignKey('auth.User',
                               related_name='team_owner',
                               on_delete=models.CASCADE,
@@ -27,3 +26,21 @@ class Teams(models.Model):
     class Meta:
         verbose_name = 'Команда'
         verbose_name_plural = 'Команды'
+
+
+class JoinInTeam(models.Model):
+    author = models.ForeignKey('auth.User',
+                               related_name='author',
+                               on_delete=models.CASCADE,
+                               blank=True,
+                               null=True)
+    text = models.TextField('Информация о заявителе')
+    team_boss = models.ForeignKey('Teams',
+                                  related_name='team_boss',
+                                  on_delete=models.CASCADE,
+                                  blank=True,
+                                  null=True)
+
+    class Meta:
+        verbose_name = 'Заявка'
+        verbose_name_plural = 'Заявки'

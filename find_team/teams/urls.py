@@ -8,4 +8,5 @@ urlpatterns = [
     path('<int:pk>/', TeamDetailView.as_view(), name='team_detail'),
     path('<int:pk>/update', TeamUpdateView.as_view(), name='team_update'),
     path('<int:pk>/delete', TeamDeleteView.as_view(), name='team_delete'),
+    path('<int:pk>/join_in_team', views.team_join_in, name='join_in_team'),
 ]

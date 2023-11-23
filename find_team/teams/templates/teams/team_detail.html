@@ -11,7 +11,17 @@
         <a href="{% url 'team_update' team_detail_view.id %}" class="btn btn-info">Редактировать команду</a>
         <a href="{% url 'team_delete' team_detail_view.id %}" class="btn btn-danger">Удалить команду</a>
     {% else %}
-<!--    # TODO добавить кнопку вступления в команду для не автора команды-->
+
+    <div class="btn btn-success js-button-campaign">Вступить в команду</div>
+
+    <div class="overlay js-overlay-campaign">
+		<div class="popup js-popup-campaign">
+            <h3>Подайте заявку на присоединение к этой команде</h3><br>
+            <button class="btn btn-success" onclick="location.href='{% url 'join_in_team' team_detail_view.id %}'">Подать заявку</button>
+			<div class="close-popup js-close-campaign"></div>
+		</div>
+	</div>
+
     {% endif %}
 </div>
 {% endblock %}

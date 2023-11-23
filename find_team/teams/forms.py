@@ -1,6 +1,6 @@
 import datetime
 
-from .models import Teams
+from .models import Teams, JoinInTeam
 from django.forms import ModelForm, TextInput, Textarea, DateInput, DateTimeField
 
 
@@ -34,3 +34,11 @@ class TeamsForm(ModelForm):
                 'placeholder': "Теги для быстрого поиска"
             })
         }
+
+
+class JoinForm(ModelForm):
+    text = Textarea()
+
+    class Meta:
+        model = JoinInTeam
+        fields = ['author', 'text', 'team_boss']

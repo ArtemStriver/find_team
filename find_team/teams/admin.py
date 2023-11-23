@@ -1,7 +1,12 @@
 from django.contrib import admin
-from .models import Teams
+from .models import Teams, JoinInTeam
 
 
 @admin.register(Teams)
-class TaskAdmin(admin.ModelAdmin):
+class TeamAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(JoinInTeam)
+class JoinInTeamAdmin(admin.ModelAdmin):
     pass
