@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from users.models import Answer
+
+
+@admin.register(Answer)
+class AnswerAdmin(admin.ModelAdmin):
+    pass

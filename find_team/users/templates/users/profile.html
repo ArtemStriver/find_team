@@ -7,6 +7,41 @@
     <div class="card p-3">
         <h3 class="mb-0 mt-0">{{ user.username }}</h3>
         <h4 class="mb-0 mt-0">{{ user.email }}</h4><br>
+
+        {% if answers %}
+            <h4>Ответы на заявки</h4>
+            {% for el in answers %}
+                <p>{{ el }}</p>
+            {% endfor %}
+        {% endif %}
+
+        {% if my_letters %}
+            <h4>Мои заявки на вступление в команду</h4>
+            {% for el in my_letters %}
+                <p>{{ el }}</p>
+            {% endfor %}
+        {% else %}
+            <p>Сообщений нет.</p>
+        {% endif %}
+
+        {% if my_teams %}
+            <h4>Предложения присоединиться к моим командам</h4>
+            {% for team in my_teams %}
+<!--                <p>{{ team.id }}</p>-->
+                {% for massage in massages %}
+<!--                    <p>{{ massage.text }}</p>-->
+                    {% if team.id == massage.team_boss_id %}
+                        <div>
+                            <p>{{ massage.text }}</p>
+                            <button type="button" class="btn btn-warning" onclick="location.href='{% url 'users:answer' massage.id %}'">Подробнее</button>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        {% else %}
+            <p>Сообщений нет.</p>
+        {% endif %}
+
         <button class="btn btn-sm btn-secondary w-100" onclick="location.href='{% url 'users:password_change' %}'">Change password</button><br>
         <button class="btn btn-sm btn-danger w-100 ml-2" onclick="location.href='{% url 'logout' %}?next=/users/profile'">Logout</button>
     </div>

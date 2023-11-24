@@ -1,6 +1,8 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django.forms import TextInput, PasswordInput
+from django.forms import TextInput, PasswordInput, ModelForm, Textarea
+
+from users.models import Answer
 
 
 class RegisterForm(UserCreationForm):
@@ -18,3 +20,11 @@ class RegisterForm(UserCreationForm):
                 'placeholder': "Логин"
             }),
         }
+
+
+class AnswerForm(ModelForm):
+    text = Textarea()
+
+    class Meta:
+        model = Answer
+        fields = ['answer_author', 'answer_recipient', 'contacts', 'text']

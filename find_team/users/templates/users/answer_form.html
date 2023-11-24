@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Ответ на заявку{% endblock %}
+
+{% block content %}
+
+<div class="page_team_list">
+    <h1>Ответ на заявку</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" class="form-control" name='contacts' placeholder="Telegram/Discord link or name"><br>
+        <textarea class="form-control" name='text' placeholder="Сообщение для заявителя." cols="40" rows="3"></textarea><br>
+        {{ error }}
+        <button type="submit" class="btn btn-success">Принять</button><br><br>
+<!--        TODO при принятии человека в команду, необходимо автоматически удалять запись о заявке из БД-->
+<!--        TODO плюс надо хорошо оформить вывод ответов, заявок и приглашений в профиле, выводить инфу, а не объекты-->
+        <button type="button" class="btn btn-danger">Отклонить</button><br><br>
+<!--        TODO сделать перенаправление на страницу отклонения заявки, так де как и при удалении команды-->
+    </form>
+</div>
+
+{% endblock %}
