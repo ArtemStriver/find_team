@@ -12,9 +12,10 @@ from .models import Answer
 
 @login_required
 def profile_view(request):
+    """Представление профиля пользователя."""
     my_letters = models.JoinInTeam.objects.filter(author=request.user.id).order_by('-id')
     my_teams = models.Teams.objects.filter(owner_id=request.user.id).order_by('-id')
-    massages = models.JoinInTeam.objects.all() # filter(team_boss=my_teams.id)
+    massages = models.JoinInTeam.objects.all()  # filter(team_boss=my_teams.id)
     answers = Answer.objects.filter(answer_recipient=request.user.id).order_by('-id')
 
     data = {
@@ -29,6 +30,7 @@ def profile_view(request):
 
 @login_required
 def answer_view(request, pk):
+    """Представление ответов на заявки пользователя."""
     error = ''
     if request.method == "POST":
         form = AnswerForm(request.POST)
@@ -56,18 +58,21 @@ def answer_view(request, pk):
 
 
 def delete_join(request, pk):
+    """Функция удаления входящей заявки."""
     join_in = models.JoinInTeam.objects.get(id=pk)
     join_in.delete()
     return HttpResponseRedirect('/users/profile')
 
 
 def delete_answer(request, pk):
+    """Функция удаления ответа на заявку."""
     answer = Answer.objects.get(id=pk)
     answer.delete()
     return HttpResponseRedirect('/users/profile')
 
 
 class RegisterView(FormView):
+    """Представление формы регистрации пользователя."""
     form_class = RegisterForm
     template_name = 'registration/register.html'
     success_url = '/users/profile'
@@ -78,16 +83,20 @@ class RegisterView(FormView):
 
 
 class UsersPasswordResetView(PasswordResetView):
+    """Представление сброса пароля пользователя."""
     template_name = 'users/password_reset_email.html'
 
 
 class UsersPasswordResetDoneView(PasswordResetDoneView):
+    """Представление после сброса пароля пользователя."""
     template_name = 'users/password_reset_done.html'
 
 
 class UsersPasswordChangeView(PasswordChangeView):
+    """Представление изменения пароля пользователя."""
     template_name = 'users/password_change.html'
 
 
 class UsersPasswordChangeDoneView(PasswordChangeDoneView):
+    """Представление после изменения пароля пользователя."""
     template_name = 'users/password_change_done.html'

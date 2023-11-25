@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Answer(models.Model):
+    """Модель ответа на заявку."""
     answer_author = models.ForeignKey('auth.User',
                                       related_name='answer_author',
                                       on_delete=models.CASCADE,

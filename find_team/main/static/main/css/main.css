@@ -1,4 +1,4 @@
-/* Цвет фона */
+/*-------------параметры основных элементов страницы---------------*/
 body {
     background: #aaa;
 }
@@ -8,6 +8,8 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+
+/*-------------параметры подвала сайта---------------*/
 
 footer {
     margin: 0;
@@ -37,6 +39,8 @@ footer {
     text-decoration: none;
     color: white;
 }
+
+/*-------------параметры панели навигации---------------*/
 
 .navigation {
     display: flex;
@@ -116,11 +120,7 @@ footer {
     background-color: #4CAF50;
 }
 
-.page_footer {
-    color: red;
-    position: absolute;
-    bottom: 0;
-}
+/*-------------параметры блока с контентом---------------*/
 
 .page_main {
     display: block;
@@ -188,6 +188,8 @@ footer {
     background-color: #4CAF50;
 }
 
+/*-------------параметры для отображения команд---------------*/
+
 .page_team_list {
     float: center;
     color: #000;
@@ -243,6 +245,8 @@ footer {
     transform: scale(1.05);
     background-color: #4CAF50;
 }
+
+/*-------------параметры формы ввода информации---------------*/
 
 form {
     margin: auto;

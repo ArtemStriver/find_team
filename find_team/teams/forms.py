@@ -5,6 +5,7 @@ from django.forms import ModelForm, TextInput, Textarea, DateInput, DateTimeFiel
 
 
 class TeamsForm(ModelForm):
+    """Форма для добавления команды."""
     deadline = DateTimeField(required=False,
                              widget=DateInput(attrs={'type': 'datetime-local',
                                                      'class': 'form-control',
@@ -37,6 +38,7 @@ class TeamsForm(ModelForm):
 
 
 class JoinForm(ModelForm):
+    """Форма для заявки в команду."""
     text = Textarea()
 
     class Meta:

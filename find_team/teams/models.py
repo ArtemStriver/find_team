@@ -5,6 +5,7 @@ from django.db import models
 
 
 class Teams(models.Model):
+    """Модель команды."""
     owner = models.ForeignKey('auth.User',
                               related_name='team_owner',
                               on_delete=models.CASCADE,
@@ -29,6 +30,7 @@ class Teams(models.Model):
 
 
 class JoinInTeam(models.Model):
+    """Модель заявки в команду."""
     title = models.CharField('Название', max_length=42, blank=True, null=True)
     author = models.ForeignKey('auth.User',
                                related_name='author',

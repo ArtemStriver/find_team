@@ -6,9 +6,11 @@ from users.models import Answer
 
 
 class RegisterForm(UserCreationForm):
+    """Форма для регистрации пользователя."""
+
     class Meta(UserCreationForm.Meta):
         model = User
-        fields = UserCreationForm.Meta.fields + ('email', )
+        fields = UserCreationForm.Meta.fields + ('email',)
 
         widgets = {
             'username': TextInput(attrs={
@@ -23,6 +25,7 @@ class RegisterForm(UserCreationForm):
 
 
 class AnswerForm(ModelForm):
+    """Форма для ответа на заявку."""
     text = Textarea()
 
     class Meta:
