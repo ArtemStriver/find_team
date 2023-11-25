@@ -41,4 +41,4 @@ class JoinForm(ModelForm):
 
     class Meta:
         model = JoinInTeam
-        fields = ['author', 'text', 'team_boss']
+        fields = ['title', 'author', 'text', 'team_boss']

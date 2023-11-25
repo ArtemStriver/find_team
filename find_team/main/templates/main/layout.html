@@ -12,58 +12,55 @@
     <script src="https://kit.fontawesome.com/87cf8839c3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<header class="page_header">
-    <nav class="navigation">
-        <!--          TODO  на первое время сделаю стилизованый текст в качестве логотипа-->
-        <p class="logo">FindTeam</p>
+    <div class="page">
+        <header class="page_header">
+            <nav class="navigation">
+                <!--          TODO  на первое время сделаю стилизованый текст в качестве логотипа-->
+                <p class="logo">FindTeam</p>
 
-        <ul class="navigation_list">
-            <li>
-                <a href="{% url 'home' %}" class="navigation_title"><i class="fa-solid fa-house"></i> Главная</a>
-            </li>
-            <li>
-                <a href="{% url 'team_list' %}" class="navigation_title"><i class="fa-solid fa-magnifying-glass"></i> Найти
-                    команду</a>
-            </li>
-            <li>
-                <a href="{% url 'create' %}" class="navigation_title"><i class="fa-solid fa-plus"></i> Создать команду</a>
-            </li>
-            <li>
-                <a href="{% url 'about' %}" class="navigation_title"><i class="fa-solid fa-star"></i> О проекте</a>
-            </li>
-        </ul>
+                <ul class="navigation_list">
+                    <li>
+                        <a href="{% url 'home' %}" class="navigation_title"><i class="fa-solid fa-house"></i> Главная</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'team_list' %}" class="navigation_title"><i class="fa-solid fa-magnifying-glass"></i> Найти
+                            команду</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'create' %}" class="navigation_title"><i class="fa-solid fa-plus"></i> Создать команду</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'about' %}" class="navigation_title"><i class="fa-solid fa-star"></i> О проекте</a>
+                    </li>
+                </ul>
 
-        <button type="button" class="navigation_button">
-            {% if user.is_authenticated %}
-            <a href="{% url 'users:profile' %}">Профиль</a>
-            {% else %}
-            <a href="{% url 'login' %}">Вход</a>
-            {% endif %}
-        </button>
-        <!--            TODO Надо будет отдельно проработать меню профиля-->
-        <!--            <div class="navigation_button_profile">-->
-        <!--            {% if user.is_authenticated %}-->
-        <!--                <button type="button" class="navigation_button">-->
-        <!--                    <a href="{#}">Профиль</a>-->
-        <!--                </button>-->
-        <!--            {% else %}-->
-        <!--                <button type="button" class="navigation_button">-->
-        <!--                    <a href="{#}">Вход</a>-->
-        <!--                </button>-->
-        <!--             {% endif %}-->
-        <!--             </div>-->
-    </nav>
-</header>
+                <button type="button" class="navigation_button">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'users:profile' %}">Профиль</a>
+                    {% else %}
+                    <a href="{% url 'login' %}">Вход</a>
+                    {% endif %}
+                </button>
+            </nav>
+        </header>
 
-<main>
-    {% block content %}
-    {% endblock %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="{% static 'main/js/main.js' %}"></script>
-</main>
+        <main>
+            {% block content %}
+            {% endblock %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="{% static 'main/js/main.js' %}"></script>
+        </main>
 
-<footer class="page_footer">
-    <p> Здесь будет подвал</p>
-</footer>
+        <footer>
+            <ul class="footer_list">
+                <li>
+                    <p><i class="fa fa-star"></i> Artem Striver</p>
+                </li>
+                <li>
+                    <a href="https://github.com/ArtemStriver" target="_blank"><i class="fa fa-github"></i> Github</a>
+                </li>
+            </ul>
+        </footer>
+    </div>
 </body>
 </html>

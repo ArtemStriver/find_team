@@ -25,6 +25,7 @@ def team_join_in(request, pk):
             form = form.save(commit=False)
             form.author = request.user
             form.team_boss = Teams.objects.get(id=pk)
+            form.title = Teams.objects.filter(id=pk).get().title
             form.save()
             return redirect('team_list')
         else:

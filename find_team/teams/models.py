@@ -29,6 +29,7 @@ class Teams(models.Model):
 
 
 class JoinInTeam(models.Model):
+    title = models.CharField('Название', max_length=42, blank=True, null=True)
     author = models.ForeignKey('auth.User',
                                related_name='author',
                                on_delete=models.CASCADE,

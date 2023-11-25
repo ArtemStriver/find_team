@@ -6,30 +6,35 @@
 <div class="container mt-5 d-flex justify-content-center">
     <div class="card p-3">
         <h3 class="mb-0 mt-0">{{ user.username }}</h3>
-        <h4 class="mb-0 mt-0">{{ user.email }}</h4><br>
+        <h4 class="mb-0 mt-0">{{ user.email }}</h4><br><br>
 
+        <h4>Ответы на заявки:</h4>
         {% if answers %}
-            <h4>Ответы на заявки</h4>
             {% for el in answers %}
-                <p>{{ el }}</p>
-            {% endfor %}
-        {% endif %}
-
-        {% if my_letters %}
-            <h4>Мои заявки на вступление в команду</h4>
-            {% for el in my_letters %}
-                <p>{{ el }}</p>
+<!--        TODO Сделать отдельную страницу для отображения ответов-->
+                <p>______________________</p>
+                <p>{{ el.contacts }}</p>
+                <p>{{ el.text }}</p>
+                <button type="button" class="btn btn-outline-danger" onclick="location.href='{% url 'users:answer_delete' el.id %}'">Удалить ответ</button>
+                <p>--------------------------</p>
             {% endfor %}
         {% else %}
-            <p>Сообщений нет.</p>
+            <p>Ответов на заявки нет.</p>
         {% endif %}
 
+        <h4>Мои заявки на вступление в команду:</h4>
+        {% if my_letters %}
+            {% for el in my_letters %}
+                <p>{{ el.title }}  -->  {{ el.text }}</p>
+            {% endfor %}
+        {% else %}
+            <p>Заявок на вступление нет.</p>
+        {% endif %}
+
+        <h4>Предложения присоединиться к моим командам:</h4>
         {% if my_teams %}
-            <h4>Предложения присоединиться к моим командам</h4>
             {% for team in my_teams %}
-<!--                <p>{{ team.id }}</p>-->
                 {% for massage in massages %}
-<!--                    <p>{{ massage.text }}</p>-->
                     {% if team.id == massage.team_boss_id %}
                         <div>
                             <p>{{ massage.text }}</p>
@@ -39,12 +44,13 @@
                 {% endfor %}
             {% endfor %}
         {% else %}
-            <p>Сообщений нет.</p>
+            <p>Предложений нет.</p>
         {% endif %}
-
+        <br>
         <button class="btn btn-sm btn-secondary w-100" onclick="location.href='{% url 'users:password_change' %}'">Change password</button><br>
         <button class="btn btn-sm btn-danger w-100 ml-2" onclick="location.href='{% url 'logout' %}?next=/users/profile'">Logout</button>
     </div>
 </div>
+<br><br><br><br><br><br>
 
 {% endblock %}
