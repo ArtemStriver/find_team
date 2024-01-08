@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import sys
 
 from django.urls import reverse_lazy
 
@@ -15,7 +16,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'ddsjhfnjkhadskjajnvjn363478dhfjkdjango')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0']
 
 EMAIL_HOST = os.getenv('EMAIL_HOST')
 EMAIL_PORT = os.getenv('EMAIL_PORT')
@@ -117,6 +118,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+if sys.argv[1] != 'runserver':
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_ROOT = 'media'
 
 
